@@ -4,7 +4,7 @@
  * @Author: xueyilu
  * @Date: 2019-09-20 15:28:50
  * @LastEditors: xueyilu
- * @LastEditTime: 2019-09-20 17:13:11
+ * @LastEditTime: 2019-09-20 20:15:36
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,20 +22,28 @@
       href="./css/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
+      html {
+        font-size: 30px;
+      }
+      @media screen and (max-width: 700px) {
+        html {
+          font-size: 20px;
+        }
+      }
       .home-image {
         width: 100vw;
         height: 100vh;
-        background-image: url('./img/rain-day.jpg');
+        background-image: url('./img/rain-day-with-someone.png');
         background-repeat: repeat;
-        background-size: 30%;
+        background-size: cover;
         background-position: center;
         position: relative;
       }
       .shade {
         position: absolute;
         top: 0;
-        left: -25%;
-        width: 60vw;
+        left: -100%;
+        width: 150vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
         transform: skewX(40deg);
@@ -50,17 +58,18 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        margin-left: 3em;
+        margin-left: 8%;
       }
       .who {
-        font-size: 30px;
+        font-size: 1rem;
         font-family: 'Pacifico', serif;
         margin-bottom: 2em;
       }
       .how {
-        font: bold 25px Consolas, Monaco, monospace;
+        font: bold 0.8rem Consolas, Monaco, monospace;
         border-right: 2px solid transparent;
-        width: 21em;
+        width: 13.5em;
+        /* width: 21em; */
         white-space: nowrap;
         overflow: hidden;
         animation: typing 2s steps(26, end),
@@ -77,6 +86,33 @@
           border-color: #fff;
         }
       }
+      @keyframes loading {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+      .loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('./img/orb.gif');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #000;
+        opacity: 1;
+        font-size: 0.5rem;
+        color: #ccc;
+        text-align: center;
+        line-height: 100vh;
+        animation: loading 1s linear 1s;
+        animation-fill-mode: forwards;
+      }
     </style>
   </head>
 
@@ -85,7 +121,16 @@
       <div class="shade"></div>
       <div class="home-breif-intro">
         <h1 class="who">Lulu-Xue</h1>
-        <h2 class="how">An Experienced Web Front End Engineer</h2>
+        <h2 class="how">See you next time. Miss.</h2>
+        <!-- <h2 class="how">An Experienced Web Front End Engineer</h2> -->
+      </div>
+      <div class="loading">
+        <p>
+          I will remember you
+          <span style="color: transparent">as long as I live.</span><br /><span
+            >如果我半年后还记得你，我想看看咸阳（你肯定看不到这句话了）</span
+          >
+        </p>
       </div>
     </section>
     <script></script>
