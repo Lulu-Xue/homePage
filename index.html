@@ -1,0 +1,93 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: xueyilu
+ * @Date: 2019-09-20 15:28:50
+ * @LastEditors: xueyilu
+ * @LastEditTime: 2019-09-20 17:13:11
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xueyilu.github.com</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .home-image {
+        width: 100vw;
+        height: 100vh;
+        background-image: url('./img/rain-day.jpg');
+        background-repeat: repeat;
+        background-size: 30%;
+        background-position: center;
+        position: relative;
+      }
+      .shade {
+        position: absolute;
+        top: 0;
+        left: -25%;
+        width: 60vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: skewX(40deg);
+      }
+      .home-breif-intro {
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        margin-left: 3em;
+      }
+      .who {
+        font-size: 30px;
+        font-family: 'Pacifico', serif;
+        margin-bottom: 2em;
+      }
+      .how {
+        font: bold 25px Consolas, Monaco, monospace;
+        border-right: 2px solid transparent;
+        width: 21em;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 2s steps(26, end),
+          cursor-blink 0.3s step-end infinite alternate;
+      }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+      }
+
+      @keyframes cursor-blink {
+        50% {
+          border-color: #fff;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="home-image">
+      <div class="shade"></div>
+      <div class="home-breif-intro">
+        <h1 class="who">Lulu-Xue</h1>
+        <h2 class="how">An Experienced Web Front End Engineer</h2>
+      </div>
+    </section>
+    <script></script>
+  </body>
+</html>
