@@ -4,7 +4,7 @@
  * @Author: xueyilu
  * @Date: 2019-09-20 15:28:50
  * @LastEditors: xueyilu
- * @LastEditTime: 2019-09-21 09:17:51
+ * @LastEditTime: 2019-09-21 09:44:57
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +22,12 @@
       href="./css/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
-      html {
+      html,
+      body {
         font-size: 30px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
       }
       @media screen and (max-width: 700px) {
         html {
@@ -40,8 +44,8 @@
         }
       }
       .home-image {
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         background-image: url('./img/rain-day.jpg');
         background-repeat: repeat;
         background-size: cover;
@@ -54,8 +58,8 @@
         position: absolute;
         top: 0;
         left: -100%;
-        width: 150vw;
-        height: 100vh;
+        width: 150%;
+        height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         transform: skewX(40deg);
       }
@@ -126,7 +130,7 @@
         color: #ccc;
         text-align: center;
         line-height: 100vh;
-        animation: loading 1s linear 10s;
+        animation: loading 1s linear 3s;
         animation-fill-mode: forwards;
       }
       .loading > img {
@@ -147,8 +151,6 @@
 
   <body>
     <section class="home-image">
-      <img src="./img/orb.gif" style="display:none" />
-      <img src="./img/rain-day.jpg" style="display:none" />
       <div class="shade"></div>
       <div class="home-breif-intro">
         <h1 class="who">Lulu-Xue</h1>
@@ -163,10 +165,16 @@
       </div>
     </section>
     <script>
+      let loadingImage = new Image()
+      loadingImage.onload = function() {
+        let node = document.querySelector('.loading')
+        node.style.cssText = 'animation-delay:0s'
+      }
+      loadingImage.src = './img/orb.gif'
       let img = new Image()
       img.onload = function() {
         let node = document.querySelector('.loading')
-        node.style.animationDelay = '0s'
+        node.style.cssText = 'animation-delay:1s'
       }
       img.onerror = function() {
         console.log('error')
