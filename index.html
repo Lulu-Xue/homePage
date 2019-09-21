@@ -4,7 +4,7 @@
  * @Author: xueyilu
  * @Date: 2019-09-20 15:28:50
  * @LastEditors: xueyilu
- * @LastEditTime: 2019-09-20 20:51:48
+ * @LastEditTime: 2019-09-21 09:17:51
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +30,7 @@
           font-size: 20px;
         }
       }
+
       @keyframes scale {
         from {
           background-size: 100%;
@@ -58,6 +59,11 @@
         background-color: rgba(0, 0, 0, 0.5);
         transform: skewX(40deg);
       }
+      @media screen and (max-width: 500px) {
+        .shade {
+          transform: skewX(-20deg);
+        }
+      }
       .home-breif-intro {
         color: #fff;
         position: absolute;
@@ -78,11 +84,11 @@
       .how {
         font: bold 0.8rem Consolas, Monaco, monospace;
         border-right: 2px solid transparent;
-        width: 14em;
+        width: 11em;
         /* width: 21em; */
         white-space: nowrap;
         overflow: hidden;
-        animation: typing 2s steps(26, end),
+        animation: typing 2s steps(26, end) 0.5s,
           cursor-blink 0.3s step-end infinite alternate;
       }
       @keyframes typing {
@@ -120,7 +126,7 @@
         color: #ccc;
         text-align: center;
         line-height: 100vh;
-        animation: loading 1s linear 1s;
+        animation: loading 1s linear 10s;
         animation-fill-mode: forwards;
       }
       .loading > img {
@@ -146,20 +152,26 @@
       <div class="shade"></div>
       <div class="home-breif-intro">
         <h1 class="who">Lulu-Xue</h1>
-        <h2 class="how">See you next time. Miss.</h2>
+        <h2 class="how">See you next time.</h2>
         <!-- <h2 class="how">An Experienced Web Front End Engineer</h2> -->
       </div>
       <div class="loading">
         <img src="./img/orb.gif" />
         <p>
-          I will remember you
-          <span style="color: transparent">as long as I live.</span><br /><span
-            style="color: #000;"
-            >如果我半年后还记得你，我想看看咸阳（你肯定看不到这句话和上班菊花）</span
-          >
+          MEMORY
         </p>
       </div>
     </section>
-    <script></script>
+    <script>
+      let img = new Image()
+      img.onload = function() {
+        let node = document.querySelector('.loading')
+        node.style.animationDelay = '0s'
+      }
+      img.onerror = function() {
+        console.log('error')
+      }
+      img.src = './img/rain-day.jpg'
+    </script>
   </body>
 </html>
